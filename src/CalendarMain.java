@@ -18,8 +18,11 @@ public class CalendarMain {
 		System.out.println();
 		System.out.println("달을 입력하세요.");
 		int month = scan.nextInt();
-		if(month > 12) System.out.println("1~12 까지의 숫자를 입력해주세요");
-		else System.out.println(month+"월은 "+returnDay(month)+"일까지 있습니다.");
+//		if(month > 12) System.out.println("1~12 까지의 숫자를 입력해주세요");
+//		else System.out.println(month+"월은 "+returnDay(month)+"일까지 있습니다.");
+		
+		int [] maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		System.out.println(month+"월은 " + maxDays[month - 1]+ "일까지 있습니다.");
 		
 		scan.close();
 		
