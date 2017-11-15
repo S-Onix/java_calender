@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class SUm {
 	public static void main(String[] args) {
 		//ctrl + shift + n/o  <-- 자동 import
-		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		String s1, s2;
@@ -23,5 +22,6 @@ public class SUm {
 //		number2 = scan.nextInt();
 		
 		System.out.println("두 수의 합은 " + (number1+number2) + "입니다.");
+		scan.close();
 	}
 }
