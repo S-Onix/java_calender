@@ -19,17 +19,9 @@ public class Prompt {
 			System.out.printf("MONTH> ");
 			month = scan.nextInt();
 			System.out.println("시작 요일을 선택하세요 (\"SU\", \"MO\", \"WE\", \"TH\", \"FR\", \"SA\")중 하나를 입력해주세요");
+			System.out.printf("DAY> ");
 			day = scan.next();
 			
-//			if ((month > 12 || month < 1) && month != -1) {
-//				System.out.println("1~12 까지의 숫자만 입력해주세요.");
-//				continue;
-//			} else if (day.equals("-1")) {
-//				System.out.println("프로그램을 종료합니다.");
-//				break;
-//			} else {
-//				System.out.println(month + "월은 " + cal.useArrayGetMaxDaysOfMonth(year, month) + "일까지 있습니다.");
-//			}
 			cal.printCalendar(year, month, day);
 			
 		}
