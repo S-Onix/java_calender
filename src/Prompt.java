@@ -9,7 +9,6 @@ public class Prompt {
 	private Calendar cal = new Calendar();
 	
 	public void runPrompt() {
-		month = scan.nextInt();
 		while (true) {
 			System.out.println("월을 입력하세요.");
 			System.out.printf(PROMPT);
@@ -24,7 +23,7 @@ public class Prompt {
 			} else {
 				System.out.println(month + "월은 " + cal.useArrayGetMaxDaysOfMonth(month) + "일까지 있습니다.");
 			}
-			cal.printCalendar(month);
+			cal.printCalendar(2017, month);
 		}
 		
 		scan.close();

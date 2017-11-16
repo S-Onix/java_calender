@@ -23,18 +23,17 @@ public class Calendar {
 		return 0;
 	}
 
-	public void printCalendar(int month) {
+	public void printCalendar(int year, int month) {
 		int day = MAX_DAYS[month - 1];
-
-		System.out.println("월    화    수    목    금    토    일");
-		System.out.println("---------------------");
+		System.out.printf("   <<%4d년%3d월>>\n", year, month);
+		System.out.println(" SU MO TU WE TH FR SA");
+		System.out.println("----------------------");
 		for (int i = 1; i < day + 1; i++) {
 			if (i % 7 == 0) {
-				System.out.println();
-			} else if (i > 9) {
-				System.out.printf("%d  ", i);
-			} else
-				System.out.printf("%d   ", i);
+				System.out.printf("%3d\n", i);
+			} else {
+				System.out.printf("%3d", i);
+				}
 		}
 		System.out.println();
 	}
