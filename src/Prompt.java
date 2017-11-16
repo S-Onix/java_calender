@@ -7,6 +7,7 @@ public class Prompt {
 	private Scanner scan = new Scanner(System.in);
 	private int month = 0;
 	private int year = 2017;
+	private String day;
 	private Calendar cal = new Calendar();
 	
 	public void runPrompt() {
@@ -14,23 +15,24 @@ public class Prompt {
 			System.out.println("년도를 입력하세요.");
 			System.out.printf("YEAR> ");
 			year = scan.nextInt();
-			System.out.println("월을 입력하세요.(-1를 입력하면 프로그램을 종료합니다.)");
+			System.out.println("월을 입력하세요.");
 			System.out.printf("MONTH> ");
 			month = scan.nextInt();
+			System.out.println("시작 요일을 선택하세요 (\"SU\", \"MO\", \"WE\", \"TH\", \"FR\", \"SA\")중 하나를 입력해주세요");
+			day = scan.next();
 			
-			if ((month > 12 || month < 1) && month != -1) {
-				System.out.println("1~12 까지의 숫자만 입력해주세요.");
-				continue;
-			} else if (month == -1) {
-				System.out.println("프로그램을 종료합니다.");
-				break;
-			} else {
-				System.out.println(month + "월은 " + cal.useArrayGetMaxDaysOfMonth(year, month) + "일까지 있습니다.");
-			}
-			cal.printCalendar(year, month);
+//			if ((month > 12 || month < 1) && month != -1) {
+//				System.out.println("1~12 까지의 숫자만 입력해주세요.");
+//				continue;
+//			} else if (day.equals("-1")) {
+//				System.out.println("프로그램을 종료합니다.");
+//				break;
+//			} else {
+//				System.out.println(month + "월은 " + cal.useArrayGetMaxDaysOfMonth(year, month) + "일까지 있습니다.");
+//			}
+			cal.printCalendar(year, month, day);
+			
 		}
-		
-		scan.close();
 	}
 	
 	public static void main(String []args) {
