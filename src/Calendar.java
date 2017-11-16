@@ -35,11 +35,11 @@ public class Calendar {
 			return false;
 	}
 
-	public int isFirstOfDay(String day) {
+	public int isFirstOfDay(String weekend) {
 		int startDayPoint;
 
 		for (int i = 0; i < FIRST_DAY.length; i++) {
-			if (FIRST_DAY[i].equals(day)) {
+			if (FIRST_DAY[i].equals(weekend)) {
 				startDayPoint = i;
 				return startDayPoint;
 			}
@@ -48,21 +48,21 @@ public class Calendar {
 		return -1;
 	}
 
-	public void printCalendar(int year, int month, String startDay) {
+	public void printCalendar(int year, int month, String startWeekend) {
 
 		int MaxDay = useArrayGetMaxDaysOfMonth(year, month);
-		int startDayOfNumber = isFirstOfDay(startDay);
+		int startWeekendOfNumber = isFirstOfDay(startWeekend);
 
 		System.out.printf("   <<%4d년%3d월>>\n", year, month);
 		System.out.println(" SU MO TU WE TH FR SA");
 		System.out.println("----------------------");
 
-		for (int i = 0; i < startDayOfNumber; i++) {
+		for (int i = 0; i < startWeekendOfNumber; i++) {
 			System.out.printf("   ");
 		}
 
 		for (int i = 1; i < MaxDay + 1; i++) {
-			if ((i + startDayOfNumber) % 7 == 0) {
+			if ((i + startWeekendOfNumber) % 7 == 0) {
 				System.out.printf("%3d\n", i);
 			} else {
 				System.out.printf("%3d", i);
